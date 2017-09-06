@@ -1,4 +1,4 @@
-<html lang="ko"><head>
+<html lang="ko" style="overflow-y:hidden;"><head>
 <meta charset="utf-8">
 <link rel="shortcut icon" href="http://image.yeoboya.com/imgs/new_wedding/mobile/img/favicon_16.ico" type="image/x-icon">
 <link rel="icon" href="http://image.yeoboya.com/imgs/new_wedding/mobile/img/favicon_16.ico" type="image/x-icon">
@@ -295,8 +295,38 @@ background:linear-gradient(to bottom, #ffffff 0%, #ececec 100%);}
 .photo_cer_wrap .btn_cer_bg {display:block; height:38px; line-height:38px; border:1px solid #adadad; border-radius:3px; background:-moz-linear-gradient(top, #fefefe 0%, #ededed 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#ededed)); background:-webkit-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-o-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-ms-linear-gradient(top, #fefefe 0%,#ededed 100%); background:linear-gradient(to bottom, #fefefe 0%,#ededed 100%); text-align:center;/* FF3.6+ */filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#ededed',GradientType=0 );/* IE6-9 */ }
 .photo_cer_wrap .bf_color01 {color:#666;}
 .photo_cer_wrap .alarm_mg{margin:9px 10px;}
-.marry_cer{width:256px; height:189px; margin-bottom:10px; margin-left:10px; overflow-y:scroll;}
-.marry_cer .mr_paper{border:1px solid #adadad; box-sizing:border-box; width:256px; height:271px; background:url(images/marry_cer.png) no-repeat 0 0; background-size:257px 272px;}
+.marry_cer{width:256px; height:175px; margin-bottom:10px; margin-left:10px; overflow-y:scroll; border:1px solid #adadad; box-sizing:border-box; border-radius:3px;}
+.marry_cer .mr_paper{width:100%; height:272px; background:url(http://image.yeoboya.com/imgs/new_wedding/mobile/img2/marry_cer.png) no-repeat 0 0; background-size:257px 272px;}
+.marry_cer .mr_paper .paper_p{font-size:16px; font-weight:600; color:#dc2727; padding-top:3px;}
+    
+/* 증명서 스크롤 */
+.style_1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2) !important;
+	border-radius: 4px !important;
+	background-color: #F5F5F5 !important;
+}
+
+.style_1::-webkit-scrollbar
+{
+	width: 5px !important;
+	background-color: #F5F5F5 !important;
+	-webkit-appearance: none !important;
+}
+
+.style_1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px !important;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3) !important;
+	background-color: #e0d9d9  !important;
+}
+.style_1::-webkit-scrollbar-thumb:window-inactive {
+   background: #e0d9d9  !important;
+ }
+
+
+/*--------증명서사진등록 팝업창 모달---------*/    
+.cer_modal{position:fixed; top:0; left:0; width:100%; z-index:20; background:rgba(0,0,0,0.7); height:100%;}
     
 </style>
 <link href="http://m.yeoboya.com/cont/alarmset/css/alarmset.css" rel="stylesheet" type="text/css"><!-- 170523 _ 외부CSS 추가 : '더보기>알림수신설정'에 쓰인 도움말레이어 CSS -->
@@ -1544,11 +1574,14 @@ function visitHistory() {
         <a href="javascript:void(0);" id="photo_save_close" class="btn_alarm btn_alarm_bg btn_photo_color01 font_m">닫기</a>
     </div>
 </div>
-
+<!--20170906 증명서사진등록 팝업모달 추가-->
+<div class="cer_modal">
+</div>
+<!--//증명서사진등록 팝업모달-->
 <!--20170906 증명서사진등록 팝업창 추가-->
 <div id="photo_cer" class="photo_cer_wrap" style="display:block;">
     <div class="photo_alarm_cer">
-        <img src="images/photo_alarm_cer.png" id="photoDesc" width="282" height="108 alt=" 사진가져오기="">
+        <img src="http://image.yeoboya.com/imgs/new_wedding/mobile/img2/photo_alarm_cer.png" id="photoDesc" width="282px" height="110px" alt="사진가져오기" />
         <p class="num_photo font_m">등록 가능한 사진수 : 
             <span class="num_txt"> 2장</span>
             <span class="max_con"> (최대 <span id="maxPhotoCnt">2</span>장까지)</span>
@@ -1556,8 +1589,10 @@ function visitHistory() {
         <a href="#" id="photo_cer_gallery" class="btn_cer btn_cer_bg font_m alarm_mg">앨범에서 가져오기</a>
         <a href="#" id="photo_cer_camera" class="btn_cer btn_cer_bg font_m alarm_mg">카메라 촬영하기</a>
         <a href="#" id="photo_cer_close" class="btn_cer btn_cer_bg bf_color01 font_m alarm_mg">닫기</a>
-        <div class="marry_cer">
-            <div class="mr_paper"></div>
+        <div class="marry_cer style_1">
+            <div class="mr_paper">
+                <p class="paper_p">개인정보 비공개처리 후 인증</p>
+            </div>
         </div><!--marry_cer-->
     </div>
 </div>
